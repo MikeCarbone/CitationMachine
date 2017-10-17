@@ -54,7 +54,7 @@ function sidebar_close() {
     document.getElementById("sidebarButton").style.color = "white";
     document.getElementById("sidebarButton").style.position = "absolute";
     document.getElementById("sidebarButton").style.zIndex = "3";
-    document.getElementById("sidebarButton").style.width = "15%";
+    document.getElementById("sidebarButton").style.width = "100%";
     document.getElementById("shortLogo").style.display = "none";
     document.getElementById("mySidebar").style.width = "5%"
 }
