@@ -354,6 +354,7 @@ button#auto-button.big-button{
 	.input-container{
 		margin-left: 18%;
 		margin-right: 20%;
+		z-index: 3;
 	}
 }
 
@@ -366,6 +367,7 @@ button#auto-button.big-button{
 
 	.input-container{
 		margin-left: 18%;
+		z-index: 3;
 	}
 
 	.center-logo{
