@@ -49,7 +49,7 @@ function sidebar_close() {
     }
     document.getElementById("mainDiv").style.margin = "0px auto";
     document.getElementById("mainDiv").style.padding = "0px";
-    document.getElementById("mainDiv").style.zIndex = "-10"
+    //document.getElementById("mainDiv").style.zIndex = "-10"
     document.getElementById("mySidebar").style.backgroundColor = "transparent";
     document.getElementById("sidebarButton").style.color = "white";
     document.getElementById("sidebarButton").style.position = "absolute";
