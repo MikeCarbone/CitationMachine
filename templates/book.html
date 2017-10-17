@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta name="author" content="Mike Carbone">
+	<meta name="description" content="A user-friendly web service to help you create citations for your papers. Built by a student, for students.">
+	<meta name="keywords" content="citation,MLA,gobibit,bibit,cite,bibliography,automatic,generator">
+	<meta name="created" content="2017-09-01">
+
+	<meta property="og:title" content="goBibIt | Cite a book">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="{{ static_url('img/home_meta_v01.png') }}">
+	<meta property="og:url" content="http://goBibit.com/books">
+	<meta property="og:description" content="A user-friendly web service to help you create citations for your papers. Built by a student, for students.">
+
+	<meta name="twitter:site" value="@goBibit">
+	<meta property="twitter:title" content="goBibit | Cite a book">
+	<meta property="twitter:url" content="http://goBibit.com/books">
+	<meta property="twitter:description" content="A user-friendly web service to help you create citations for your papers. Built by a student, for students.">
+	<meta name="twitter:card" value="summary_large_image">
+	<meta property="twitter:image" content="{{ static_url('img/home_meta_v01.png') }}">
+
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!--<link rel="stylesheet" type="text/css" href="../css/beautifulBook.css"/>-->
+	<link rel="stylesheet" type="text/css" href="{{ static_url('css/beautifulBook.css') }}"/>
+	<link rel="icon" href="{{ static_url('img/goBibitIcon2_v02.png') }}">
+
+	<title>goBibit | Cite a book</title>
+
+</head>
+<body>
+	<header>
+		<div id="mySidebar">
+			<div class="logo-container">
+				<a href="/"><h1 class="shortLogo" id="shortLogo">(B)</h1></a>
+			</div>
+			<div class="buttonContainer" id="buttonContainer">
+				<button id="sidebarButton" onclick="sidebarring()">&#9776;</button>
+			</div>
+
+			<div class="sidebarList">
+				<a class="sidebarItem" href="/" title="Main page">home</a>
+				<a class="sidebarItem" href="/donate" title="Donate">donate</a>
+				<a class="sidebarItem" href="/feedback" title="Feedback">feedback</a>
+				<a class="sidebarItem" href="/books" title="Cite a book">cite a book</a>
+				<a class="sidebarItem" href="/website" title="Cite a website">cite a website</a>
+			</div>
+		</div>
+	</header>
+	
+
+	<div id="mainDiv" class="main">
+		<h1 class="center-logo"><a href="/">go(Bibit)</a></h1>
+		<h2 class="label"><a href="/books">cite a book - MLA</a></h2>
+		<div class="linkZone">
+				<input type="text" id="isbn-home" placeholder="Enter any details of your book" class="underline input-center">
+		    	<button class="big-button" title="Click to automatically create your citation" id="auto-button" onclick="makeCitationVisible(), pushISBN()">search</button>
+		</div>
+
+		<div class="citation-container" id="citation-container">
+			<p class="citation" id="citation-landing"></p>
+			<div id="bookCoverContainer">
+				<img id="bookCover" src="">
+			</div>
+		</div>
+		
+	<section>
+		<div class="input-container">
+
+			<ul class="style-4">
+				<li>
+					<input type="text" id="book-title" placeholder="Book Title" class="underline" title="Title of the content" maxlength="300">
+				</li>
+				<li>
+					<input type="text" id="first-name" placeholder="Author First" class="underline" title="Author's first name" maxlength="30">
+				</li>
+				<li>
+					<input type="text" id="last-name" placeholder="Author Last" class="underline" title="Author's last name" maxlength="30">
+				</li>
+				<li>
+					<input type="text" id="book-publisher" placeholder="Publisher" class="underline" title="Publisher of the content" maxlength="50">
+				</li>
+				<li>
+					<input type="text" id="year-book-published" placeholder="Year Created" class="underline" title="The year the content was created" maxlength="4">
+				</li>
+				<li>
+					<input type="text" id="chapter" placeholder="Chapter or Section Title" class="underline" title="Chapter or Section" maxlength="100">
+				</li>
+				<li>
+					<input type="number" id="edition" placeholder="Edition" class="underline" title="Edition" maxlength="10">
+				</li>
+				<li>
+					<input type="text" id="volume" placeholder="Volume" class="underline" title="Volume" maxlength="10">
+				</li>
+				<li>
+					<input type="text" id="page-start" placeholder="Page" class="underline" title="Pages" maxlength="10">
+				</li>
+				<li>
+					<input type="text" id="page-end" placeholder="Page End" class="underline" title="Page End (leave blank if only one page)" maxlength="10">
+				</li>
+				<li>
+					<input type="text" id="series-input" placeholder="Series" class="underline" title="Series" maxlength="50">
+				</li>
+			</ul>
+
+			<section class="flat updater">
+				<button class="big-button" id="button-update" onclick="makeCitationVisible(), citationBookMLA()" title="This will re-generate the citation with the updated information">Update Citation</button>
+			</section>
+		</div>
+		<div class="footer">&copy; 2017 Mike Carbone</div>
+	</section>
+
+<!--<script type="text/javascript" src="../js/fancy.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+<script type="text/javascript" src="../js/book_cite.js"></script>-->
+
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+<script src="{{ static_url('js/fancyBooks.js') }}"></script>
+<script src="{{ static_url('js/book_cite.js') }}"></script>
+
+
+</body>
+</html>

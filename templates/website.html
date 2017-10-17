@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta name="author" content="Mike Carbone">
+	<meta name="description" content="A user-friendly web service to help you create citations for your papers. Built by a student, for students.">
+	<meta name="keywords" content="citation,MLA,gobibit,bibit,cite,bibliography,automatic,generator">
+	<meta name="created" content="2017-09-01">
+
+	<meta property="og:title" content="goBibIt | Cite a website">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="{{ static_url('img/home_meta_v01.png') }}">
+	<meta property="og:url" content="http://goBibit.com/website">
+	<meta property="og:description" content="A user-friendly web service to help you create citations for your papers. Built by a student, for students.">
+
+	<meta name="twitter:site" value="@goBibit">
+	<meta property="twitter:title" content="goBibit | Cite a website">
+	<meta property="twitter:url" content="http://goBibit.com/website">
+	<meta property="twitter:description" content="A user-friendly web service to help you create citations for your papers. Built by a student, for students.">
+	<meta name="twitter:card" value="summary_large_image">
+	<meta property="twitter:image" content="{{ static_url('img/home_meta_v01.png') }}">
+
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!--<link rel="stylesheet" type="text/css" href="../css/beautifulWebsite.css"/>-->
+	<link rel="stylesheet" type="text/css" href="{{ static_url('css/beautifulWebsite.css') }}"/>
+	<link rel="icon" href="{{ static_url('img/goBibitIcon2_v02.png') }}">
+
+	<title>goBibit | Cite a website</title>
+
+</head>
+<body>
+	<header>
+		<div id="mySidebar">
+			<div class="logo-container">
+				<a href="/"><h1 class="shortLogo" id="shortLogo">(B)</h1></a>
+			</div>
+			<div class="buttonContainer" id="buttonContainer">
+				<button id="sidebarButton" type=button onclick="sidebarring()">&#9776;</button>
+			</div>
+
+			<div class="sidebarList">
+				<a class="sidebarItem" href="/" title="Main page">home</a>
+				<a class="sidebarItem" href="/donate" title="Donate">donate</a>
+				<a class="sidebarItem" href="/feedback" title="Feedback">feedback</a>
+				<a class="sidebarItem" href="/books" title="Cite a book">cite a book</a>
+				<a class="sidebarItem" href="/website" title="Cite a website">cite a website</a>
+			</div>
+		</div>
+	</header>
+	
+	<div id="mainDiv" class="main">
+		<h1 class="center-logo"><a href="/">go(Bibit)</a></h1>
+		<h2 class="label"><a href="/website">cite a website - MLA</a></h2>
+		<div class="linkZone">
+				<input type="text" id="url-home" placeholder="Enter your link here" class="underline input-center" maxlength="1500">
+		    	<button class="big-button" title="Click to automatically create your citation" id="auto-button" type=submit onclick="makeCitationVisible(), pushURL()">auto-cite!</button>
+		</div>
+
+		<div class="citation-container" id="citation-container">
+			<p class="citation" id="citation-landing"></p>
+		</div>
+
+		
+		<section>
+			<div class="input-container">
+				<ul class="style-4">
+					<li>
+						<input type="text" id="article-title" placeholder="article title" class="underline" title="Title of the content" maxlength="250">
+					</li>
+					<li>
+						<input type="text" id="first-name" placeholder="author first" class="underline" title="Author's first name" maxlength="100">
+					</li>
+
+					<li>
+						<input type="text" id="last-name" placeholder="author last" class="underline" title="Author's last name" maxlength="100">
+					</li>
+					<li>
+						<input type="text" id="website-title" placeholder="website title" class="underline" title="Website Title" maxlength="100">
+					</li>
+					<li>
+						<input type="text" id="publisher" placeholder="publisher" class="underline" title="Publisher of the content" maxlength="100">
+					</li>
+					<li>
+						<input type="text" id="month-created" placeholder="month created" class="underline" title="The month the content was created" maxlength="20">
+					</li>
+					<li>
+						<input type="number" id="day-created" placeholder="day created" class="underline" title="The year the content was created" maxlength="20">
+					</li>
+					<li>
+						<input type="text" id="year-created" placeholder="year created" class="underline" title="The year the content was created" maxlength="20">
+					</li>
+					<li>
+						<input type="text" id="month-accessed" placeholder="month accessed" class="underline" title="The month you accessed the content" maxlength="20">
+					</li>
+					<li>
+						<input type="number" id="day-accessed" placeholder="day accessed" class="underline" title="The day you accessed the content" maxlength="20">
+					</li>
+					<li>
+						<input type="text" id="year-accessed" placeholder="year accessed" class="underline" title="The year you accessed the content" maxlength="20">
+					</li>
+
+				</ul>
+			<button class="big-button" id="button-update" onclick="makeCitationVisible(), citationMLA()" type=button title="This will re-generate the citation with the updated information">update citation</button>
+
+
+			</div>
+		</section>
+		<div class="footer">&copy; 2017 Mike Carbone</div>
+	</div>
+
+<!--<script type="text/javascript" src="../js/fancy.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+<script type="text/javascript" src="../js/index.js"></script>-->
+
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+<script src="{{ static_url('js/fancyWebsite.js') }}"></script>
+<script src="{{ static_url('js/index.js') }}"></script>
+
+
+</body>
+</html>
