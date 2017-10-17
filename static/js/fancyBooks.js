@@ -56,7 +56,7 @@ function sidebar_close() {
     document.getElementById("sidebarButton").style.zIndex = "3";
     document.getElementById("sidebarButton").style.width = "15%";
     document.getElementById("shortLogo").style.display = "none";
-    document.getElementById("mySidebar").style.zIndex = "-4";
+    document.getElementById("mySidebar").style.width = "5%"
 }
 
 
