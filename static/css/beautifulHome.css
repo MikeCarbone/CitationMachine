@@ -174,7 +174,7 @@ button.big-button{
 /*------------End button--------------------*/
 
 /*iPhone6 and others*/
-@media screen and (width: 375px) and (height: 667px){
+@media screen and (min-width: 373px) and (min-height: 666px) and (max-width: 376px) and (max-height: 670){
 	*{
 	}
 
