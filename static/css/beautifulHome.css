@@ -805,7 +805,7 @@ button.big-button{
 		height: 100%;
 		background-color: #268BCB;
 		z-index: -1;
-		background-image: url(../img/iphone6_blur_02.png);
+		/*background-image: url(../img/iphone6_blur_02.png);*/
 	}
 
 	h1{
