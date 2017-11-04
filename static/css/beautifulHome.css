@@ -222,7 +222,7 @@ button.big-button{
 		font-size: 28px;
 		font-family: 'Verdana', sans-serif;
 		font-weight: lighter;
-		transform: translateX(-30px);
+		transform: translateX(30px);
 	}
 
 	#get-started{
