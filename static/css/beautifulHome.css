@@ -174,8 +174,12 @@ button.big-button{
 /*------------End button--------------------*/
 
 /*iPhone6 and others*/
-/*@media screen and (width: 375px) and (height: 667px){
+@media screen and (width: 375px) and (height: 667px){
 	*{
+	}
+
+	html{
+		width: 100%;
 	}
 
 	body{
@@ -251,8 +255,9 @@ button.big-button{
 		max-width: 100%
 		/*max-width: 17%;
 		min-width: 17%;*/
-		/*text-align: center;
+		
 		padding: 5px 5px;
+		text-align: center;
 	}
 
 	button.big-button{
@@ -265,7 +270,7 @@ button.big-button{
 	#website{
 		transform: translateY(70px);
 	}
-}*/
+}
 
 /*iPhone 6*/
 @media only screen 
