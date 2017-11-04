@@ -795,7 +795,7 @@ button.big-button{
 		padding: 0px;
 		height: 100%;
 		width: 100%;
-		background-image: none;
+		background-image: url(../img/iphone6_blur_01.png);
 }
 
 	body{
