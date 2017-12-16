@@ -280,13 +280,13 @@ button#auto-button.big-button{
 }
 
 .citation-container{
-	display: inline-block;
+	display: none;
 	margin: 0px auto 0px 29%;
 	width: 60%;
 }
 
 #citation-landing{
-	display: inline-block;
+	display: none;
 	background-color: white;
 	/*margin: 50px auto 20px auto;*/
 	width: 30%;
@@ -313,7 +313,7 @@ button#auto-button.big-button{
 }
 
 #bookCoverContainer{
-	display: inline-block;
+	display: none;
 	/*width: 20%;
 	height: auto;*/
 }
@@ -330,7 +330,7 @@ button#auto-button.big-button{
 	z-index: -1;
 	opacity: .3;
 	transform: translateY(-55%);*/
-	display: inline-block;
+	display: none;
 	height: auto;
 	max-height: 100%;
 	float: right;

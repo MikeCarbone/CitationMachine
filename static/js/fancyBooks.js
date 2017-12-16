@@ -63,9 +63,10 @@ function sidebar_close() {
 function makeCitationVisible(){
    if (isCitationVisible == false){
         isCitationVisible = true;
-        document.getElementById("citation-container").style.display = "block";
-        document.getElementById("citation-landing").style.display = "block";
+        document.getElementById("citation-container").style.display = "inline-block";
+        document.getElementById("citation-landing").style.display = "inline-block";
         document.getElementById("bookCoverContainer").style.display = "inline-block";
+        document.getElementById("bookCover").style.display = "inline-block";
     }
 }
 
