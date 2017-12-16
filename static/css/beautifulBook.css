@@ -340,6 +340,11 @@ button#auto-button.big-button{
 	transform: translateY(30%);
 }
 
+#loadingSign{
+	display: none;
+	margin: 0px auto;
+}
+
 /*iPhone6*/
 @media screen and (width: 375px) and (height: 667px){
 	.center-logo{

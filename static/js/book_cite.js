@@ -43,6 +43,8 @@ function pushISBN(){
 				authorFull = "";
 			}
 
+			document.getElementById("loadingSign").style.display = "none";
+
 			firstLast();
 			citationBookMLA();
 			assembleCover();
@@ -50,6 +52,7 @@ function pushISBN(){
 		},
 
 		error: function(jqXHR, textStatus, errorThrown){
+			document.getElementById("loadingSign").style.display = "none";
 			document.getElementById("citation-landing").innerHTML = "Something didn't work, try refreshing the page :-(";
 			console.log("Error details: ", textStatus, ", ", errorThrown);		
 		}
