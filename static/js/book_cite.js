@@ -34,8 +34,8 @@ function pushISBN(){
 
 			authorArray = response.author;
 			tempHold = authorArray[0];
-			console.log("response.author: ", authorArray);
-			console.log("tempHold: ", tempHold);
+			//console.log("response.author: ", authorArray);
+			//console.log("tempHold: ", tempHold);
 			if (typeof tempHold != "undefined"){
 				tempHold.toString();
 				authorFull = tempHold;}
@@ -47,6 +47,9 @@ function pushISBN(){
 			citationBookMLA();
 			assembleCover();
 			
+		}
+		error: function(){
+			document.getElementById("citation-landing").innerHTML = "Something didn't work, try refreshing the page :-(";
 		}
 	});
 }
