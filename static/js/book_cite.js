@@ -34,7 +34,7 @@ function pushISBN(){
 
 			authorArray = response.author;
 			tempHold = authorArray[0];
-			console.log("response.author: ", response.author);
+			console.log("response.author: ", authorArray);
 			console.log("tempHold: ", tempHold);
 			if (tempHold != ""){
 				tempHold.toString();
