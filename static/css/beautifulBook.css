@@ -343,6 +343,7 @@ button#auto-button.big-button{
 #loadingSign{
 	display: none;
 	margin: 0px auto;
+	height: 50px;
 }
 
 /*iPhone6*/
