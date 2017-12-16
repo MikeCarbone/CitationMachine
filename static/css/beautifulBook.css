@@ -280,12 +280,15 @@ button#auto-button.big-button{
 }
 
 .citation-container{
+	display: inline-block;
+	margin: 0px auto 0px 29%;
+	width: 60%;
 }
 
 #citation-landing{
-	display: none;
+	display: inline-block;
 	background-color: white;
-	margin: 50px auto 20px auto;
+	/*margin: 50px auto 20px auto;*/
 	width: 30%;
 	padding: 10px 20px;
 	border: 2px;
@@ -310,13 +313,13 @@ button#auto-button.big-button{
 }
 
 #bookCoverContainer{
-	display: none;
-	width: 20%;
-	height: auto;
+	display: inline-block;
+	/*width: 20%;
+	height: auto;*/
 }
 
 #bookCover{
-	display: inline-block;
+	/*display: inline-block;
 	position: absolute;
 	max-width: 20%;
 	height: auto;
@@ -326,7 +329,14 @@ button#auto-button.big-button{
 	padding: 0px;
 	z-index: -1;
 	opacity: .3;
-	transform: translateY(-55%);
+	transform: translateY(-55%);*/
+	display: inline-block;
+	height: auto;
+	max-height: 100%;
+	float: right;
+	padding: 0px;
+	z-index: -1;
+	transform: translateY(30%);
 }
 
 /*iPhone6*/
