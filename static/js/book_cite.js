@@ -47,12 +47,12 @@ function pushISBN(){
 			citationBookMLA();
 			assembleCover();
 			
-		}
-		
+		},
+
 		error: function(jqXHR, textStatus, errorThrown){
 			document.getElementById("citation-landing").innerHTML = "Something didn't work, try refreshing the page :-(";
 			console.log("Error details: ", jqXHR, ", ", textStatus, ", ", errorThrown);		
-		}}
+		}
 	});
 }
 
