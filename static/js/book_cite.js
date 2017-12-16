@@ -36,7 +36,7 @@ function pushISBN(){
 			tempHold = authorArray[0];
 			console.log("response.author: ", authorArray);
 			console.log("tempHold: ", tempHold);
-			if (tempHold == undefined){
+			if (tempHold != undefined){
 				tempHold.toString();
 				authorFull = tempHold;}
 			else{
