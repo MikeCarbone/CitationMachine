@@ -34,8 +34,12 @@ function pushISBN(){
 
 			authorArray = response.author;
 			tempHold = authorArray[0];
-			tempHold.toString();
-			authorFull = tempHold;
+			if (tempHold != ""){
+				tempHold.toString();
+				authorFull = tempHold;}
+			else{
+				authorFull = "";
+			}
 
 			firstLast();
 			citationBookMLA();
