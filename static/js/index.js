@@ -47,7 +47,7 @@ function pushURL(){
 			yearCreated.value = response.year;
 			firstLast();
 			fixMonthCreated();
-			citationMLA();
+			whichFormat();
 		}
 	});
 }
