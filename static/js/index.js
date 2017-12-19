@@ -334,3 +334,340 @@ function citationMLA() {
 document.getElementById("month-accessed").value = theMonth;
 document.getElementById("day-accessed").value = theDay;
 document.getElementById("year-accessed").value = theYear;
+
+//------------------------------Chicago------------------------------------//
+function correctMonthFootnoteCMS(){
+	switch(monthCreated.value.toLowerCase()){
+		case "01":
+		case "jan":
+		case "january":
+			monthFootnoteCMS = "January";
+			break;
+
+		case "02":
+		case "feb":
+		case "february":
+			monthFootnoteCMS = "February";
+			break;
+
+		case "03":
+		case "mar":
+		case "march":
+			monthFootnoteCMS = "March";
+			break;
+
+		case "04":
+		case "april":
+			monthFootnoteCMS = "April";
+			break;
+
+		case "05":
+		case "may":
+			monthFootnoteCMS = "May";
+			break;
+
+		case "06":
+		case "june":
+			monthFootnoteCMS = "June";
+			break;
+
+		case "07":
+		case "july":
+			monthFootnoteCMS = "July";
+			break;
+
+		case "08":
+		case "aug":
+		case "august":
+			monthFootnoteCMS = "August";
+			break;
+
+		case "09":
+		case "sep":
+		case "sept":
+		case "september":
+			monthFootnoteCMS = "September";
+			break;
+
+		case "10":
+		case "oct":
+		case "october":
+			monthFootnoteCMS = "October";
+			break;
+
+		case "11":
+		case "nov":
+		case "november":
+			monthFootnoteCMS = "November";
+			break;
+
+		case "12":
+		case "dec":
+		case "december":
+			monthFootnoteCMS = "December";
+			break;
+	}
+	return monthFootnoteCMS;
+}
+
+function assembleAuthorFootnoteCMS(){
+	if (firstName.value != "" && lastName.value != ""){
+		authorAssembledFootnoteCMS = firstName.value.charAt(0).toUpperCase() + firstName.value.slice(1) + " " + lastName.value.charAt(0).toUpperCase() + lastName.value.slice(1) + ", ";
+	}
+
+	else if (firstName.value == "" && lastName.value != ""){
+		authorAssembledFootnoteCMS = lastName.value.charAt(0).toUpperCase() + lastName.value.slice(1) + ", ";
+	}
+
+	else if (lastName.value == ""){
+		authorAssembledFootnoteCMS = "";
+	}
+	return authorAssembledFootnoteCMS;
+}
+
+function assembleTitleFootnoteCMS(){
+	if (articleTitle != ""){
+		articleTitleAssembledFootnoteCMS = "\"" + articleTitle.value.charAt(0).toUpperCase() + articleTitle.value.slice(1) + ",\" ";
+	}
+	if (articleTitle.value == ""){
+		articleTitleAssembledFootnoteCMS = "";
+	}
+	return articleTitleAssembledFootnoteCMS;
+}
+
+function assemblePublisherFootnoteCMS(){
+	if (publisher.value != ""){
+		publisherAssembledFootnoteCMS = publisher.value.charAt(0).toUpperCase().italics() + publisher.value.slice(1).italics() + ", ";
+	}
+	else if (websiteTitle.value != ""){
+		publisherAssembledFootnoteCMS = websiteTitle.value.charAt(0).toUpperCase().italics() + websiteTitle.value.slice(1).italics() + ", ";
+	}
+	else{
+		publisherAssembledFootnoteCMS = "";
+	}
+	return publisherAssembledFootnoteCMS;
+}
+
+function assembleDateFootnoteCMS(){
+	if (websiteTitle.value == "" && publisher.value == ""){
+		if (dayCreated.value != "" && monthCreated.value != "" && yearCreated.value != ""){
+			dateAssembledFootnoteCMS = "Last modified " + correctMonthFootnoteCMS() + " " + dayCreated.value + ", " + yearCreated.value;
+		}
+		if (dayCreated.value == "" && monthCreated.value != "" && yearCreated.value != ""){
+				dateAssembledFootnoteCMS = "Last modified " + monthCreated.value + ", " + yearCreated.value;
+		}
+		if (monthCreated.value == "" && yearCreated.value != ""){
+			dateAssembledFootnoteCMS = "Last modified " + yearCreated.value;
+		}
+    }
+    if (websiteTitle.value != "" || publisher.value != ""){
+		if (dayCreated.value != "" && monthCreated.value != "" && yearCreated.value != ""){
+			dateAssembledFootnoteCMS = "last modified " + correctMonthFootnoteCMS() + " " + dayCreated.value + ", " + yearCreated.value;
+		}
+		if (dayCreated.value == "" && monthCreated.value != "" && yearCreated.value != ""){
+				dateAssembledFootnoteCMS = "last modified " + monthCreated.value + ", " + yearCreated.value;
+		}
+		if (monthCreated.value == "" && yearCreated.value != ""){
+			dateAssembledFootnoteCMS = "last modified " + yearCreated.value;
+		}
+    }
+	if (yearCreated.value == ""){
+		if (websiteTitle.value == "" && publisher.value == ""){
+		dateAssembledFootnoteCMS = "Accessed " + monthAccessed.value + " " + dayAccessed.value + ", " + yearAccessed.value;
+			}
+		else{
+		dateAssembledFootnoteCMS = "accessed " + monthAccessed.value + " " + dayAccessed.value + ", " + yearAccessed.value;
+
+		}
+	}
+	return dateAssembledFootnoteCMS;
+}
+
+function urlInsertFootnote(){
+	if (urlToPass.value != ""){
+		urlAssembled = ", " + urlToPass.value + "."
+	}
+	else{
+		urlAssembled = "."
+	}
+	return urlAssembled;
+}
+
+function urlInsertCitation(){
+	if (urlToPass.value != ""){
+		urlAssembled = ". " + urlToPass.value + "."
+	}
+	else{
+		urlAssembled = "."
+	}
+	return urlAssembled;
+}
+
+function assembleFootnoteCMS(){
+	footnoteCMS = "FOOTNOTE: " + assembleAuthorFootnoteCMS() + assembleTitleFootnoteCMS() + assemblePublisherFootnoteCMS() + assembleDateFootnoteCMS() + urlInsertFootnote();
+	//document.getElementById("citation-landing").innerHTML = "FOOTNOTE: " + footnoteCMS;
+	return footnoteCMS;
+}
+
+function assembleAuthorCitationCMS(){
+	if (firstName.value != "" && lastName.value != ""){
+		authorAssembledCitationCMS = lastName.value.charAt(0).toUpperCase() + lastName.value.slice(1) + ", " + firstName.value.charAt(0).toUpperCase() + firstName.value.slice(1) + ". ";
+	}
+
+	if (firstName.value == "" && lastName.value != ""){
+		authorAssembledCitationCMS = lastName.value.charAt(0).toUpperCase() + lastName.value.slice(1)  + ". ";
+	}
+
+	if (firstName.value == "" && lastName.value == ""){
+		authorAssembledCitationCMS = "";
+	}
+
+	if (firstName.value != "" && lastName.value == ""){
+		authorAssembledCitationCMS = "";
+	}
+
+	return authorAssembledCitationCMS;
+}
+
+function assembleTitleCitationCMS(){
+	if (articleTitle != ""){
+		articleTitleAssembledFootnoteCMS = "\"" + articleTitle.value.charAt(0).toUpperCase() + articleTitle.value.slice(1) + ".\" ";
+	}
+	if (articleTitle.value == ""){
+		articleTitleAssembledFootnoteCMS = "";
+	}
+	return articleTitleAssembledFootnoteCMS;
+}
+
+function assemblePublisherCitationCMS(){
+	if (publisher.value != ""){
+		publisherAssembledCitationCMS = publisher.value.charAt(0).toUpperCase().italics() + publisher.value.slice(1).italics() + ", ";
+	}
+	else if (websiteTitle.value != ""){
+		publisherAssembledCitationCMS = websiteTitle.value.charAt(0).toUpperCase().italics() + websiteTitle.value.slice(1).italics() + ", ";
+	}
+	else{
+		publisherAssembledCitationCMS = "";
+	}
+	return publisherAssembledCitationCMS;
+}
+
+function assembleDateCitationCMS(){
+	if (websiteTitle.value == "" && publisher.value == ""){
+		if (dayCreated.value != "" && monthCreated.value != "" && yearCreated.value != ""){
+			dateAssembledCitationCMS = "Last modified " + correctMonthFootnoteCMS() + " " + dayCreated.value + ", " + yearCreated.value;
+		}
+		if (dayCreated.value == "" && monthCreated.value != "" && yearCreated.value != ""){
+				dateAssembledCitationCMS = "Last modified " + monthCreated.value + ", " + yearCreated.value;
+		}
+		if (monthCreated.value == "" && yearCreated.value != ""){
+			dateAssembledCitationCMS = "Last modified " + yearCreated.value;
+		}
+    }
+    if (websiteTitle.value != "" || publisher.value != ""){
+		if (dayCreated.value != "" && monthCreated.value != "" && yearCreated.value != ""){
+			dateAssembledCitationCMS = "last modified " + correctMonthFootnoteCMS() + " " + dayCreated.value + ", " + yearCreated.value;
+		}
+		if (dayCreated.value == "" && monthCreated.value != "" && yearCreated.value != ""){
+				dateAssembledCitationCMS = "last modified " + monthCreated.value + ", " + yearCreated.value;
+		}
+		if (monthCreated.value == "" && yearCreated.value != ""){
+			dateAssembledCitationCMS = "last modified " + yearCreated.value;
+		}
+    }
+	if (yearCreated.value == ""){
+		if (websiteTitle.value == "" && publisher.value == ""){
+		dateAssembledCitationCMS = "Accessed " + monthAccessed.value + " " + dayAccessed.value + ", " + yearAccessed.value;
+			}
+		else{
+		dateAssembledCitationCMS = "accessed " + monthAccessed.value + " " + dayAccessed.value + ", " + yearAccessed.value;
+
+		}
+	}
+	return dateAssembledCitationCMS;
+}
+
+function assembleCitationCMS(){
+	citationCMS = "CITATION: " + assembleAuthorCitationCMS() + assembleTitleCitationCMS() + assemblePublisherCitationCMS() + assembleDateCitationCMS() + urlInsertCitation();
+	//document.getElementById("citation-landing").innerHTML = "CITATION: " + citationCMS;
+	return citationCMS;
+}
+
+function assembleFullCMS(){
+	document.getElementById("citation-landing").innerHTML = assembleFootnoteCMS();
+	document.getElementById("citation-landing2").innerHTML = assembleCitationCMS();
+	document.getElementById("citation-break").style.display = "inline-block";
+
+	return; 
+}
+
+
+
+//--------------------------------APA----------------------------------//
+
+function assembleAuthorAPA(){
+	if (firstName.value != "" && lastName.value != ""){
+		authorAssembledAPA = lastName.value.charAt(0).toUpperCase() + lastName.value.slice(1).toLowerCase() + ", " + firstName.value.charAt(0).toUpperCase() + firstName.value.slice(1) + ". ";
+	}
+	else if (firstName.value != "" && lastName.value === ""){
+		authorAssembledAPA = firstName.value.charAt(0).toUpperCase() + firstName.value.slice(1) + ". "
+		//console.log('hello')
+		
+	}
+	else if (firstName.value === "" && lastName.value != ""){
+		authorAssembledAPA = lastName.value.charAt(0).toUpperCase() + lastName.value.slice(1).toLowerCase() + ". "
+	}
+	else {
+		authorAssembledAPA = "";
+	}
+	return authorAssembledAPA
+}
+
+function assembleTitleAPA(){
+	if (articleTitle != ""){
+		articleTitleAssembledAPA = articleTitle.value.charAt(0).toUpperCase() + articleTitle.value.slice(1) + ". ";
+	}
+	if (articleTitle.value == ""){
+		articleTitleAssembledAPA = "";
+	}
+	return articleTitleAssembledAPA;
+}
+
+function assemblePublisherAPA(){
+	if (publisher.value != ""){
+		publisherAssembledAPA = publisher.value.charAt(0).toUpperCase().italics() + publisher.value.slice(1).italics() + ". ";
+	}
+	else if (websiteTitle.value != ""){
+		publisherAssembledAPA = websiteTitle.value.charAt(0).toUpperCase().italics() + websiteTitle.value.slice(1).italics() + ". ";
+	}
+	else{
+		publisherAssembledAPA = "";
+	}
+	return publisherAssembledAPA;
+}
+
+function assembleDateAPA(){
+	if (yearCreated.value != ""){
+			dateAssembledAPA = "(" + yearCreated.value + "). "
+	}
+	else{
+		dateAssembledAPA = "n.d."
+	}
+	return dateAssembledAPA;
+}
+
+function urlInsertAPACitation(){
+	if (urlToPass.value != ""){
+		urlAssembled = "Retrieved from " + urlToPass.value + "."
+	}
+	else{
+		urlAssembled = "."
+	}
+	return urlAssembled;
+}
+
+function assembleAPACitation(){
+	APACitation = assembleAuthorAPA() + assembleDateAPA() + assembleTitleAPA() + assemblePublisherAPA() + urlInsertAPACitation();
+	document.getElementById("citation-landing").innerHTML = APACitation;
+	return APACitation;
+}

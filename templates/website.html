@@ -61,11 +61,16 @@
 	
 	<div id="mainDiv" class="main">
 		<h1 class="center-logo"><a href="/">go(Bibit)</a></h1>
-		<h2 class="label"><a href="/website">cite a website - MLA</a></h2>
+		<h2 class="label"><a href="/website">cite a website</a></h2>
 		<div class="linkZone">
 				<input type="text" id="url-home" placeholder="Enter your link here" class="underline input-center" maxlength="1500">
 		    	<button class="big-button" title="Click to automatically create your citation" id="auto-button" type=submit onclick="makeCitationVisible(), pushURL()">auto-cite!</button>
 		</div>
+		<select class="classic" id="format-list">
+	    	<option value="MLA" selected>MLA</option>
+	    	<option value="Chicago">Chicago</option>
+	    	<option value="APA">APA</option>
+		</select>
 
 		<div class="citation-container" id="citation-container">
 			<p class="citation" id="citation-landing"></p>
