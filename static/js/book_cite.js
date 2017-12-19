@@ -14,7 +14,7 @@ var foundIsbn = "";
 var bookCover = "";
 
 function pushISBN(){
-	//console.log('function pushISBN called');
+	console.log('function pushISBN called');
 	loadingSign();
 
 	$.ajax({
@@ -26,7 +26,7 @@ function pushISBN(){
 		dataType: 'JSON',
 		success: function(response){
 
-			//console.log('Info sent. Retrieving data...');
+			console.log('Info sent. Retrieving data...');
 	
 			bookTitle.value = response.title;
 			bookPublisher.value = response.publisher;
@@ -56,7 +56,7 @@ function pushISBN(){
 			loadingSign();
 			makeCitationVisible();
 			document.getElementById("citation-landing").innerHTML = "Something didn't work, try refreshing the page or changing your search!";
-			//console.log("Error details: ", textStatus, ", ", errorThrown);		
+			console.log("Error details: ", textStatus, ", ", errorThrown);		
 		}
 	});
 }
