@@ -71,11 +71,11 @@ function makeCitationVisible(){
 }
 
 function loadingSign(){
-    if (document.getElementById("loadingSign").style.display === "block"){
-        document.getElementById("loadingSign").style.display = "none";
+    if (document.getElementById("loadingSign").style.display != "block"){
+        document.getElementById("loadingSign").style.display = "block";
     }
     else{
-        document.getElementById("loadingSign").style.display = "block";
+        document.getElementById("loadingSign").style.display = "none";
     }
 }
 

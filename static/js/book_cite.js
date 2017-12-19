@@ -59,10 +59,14 @@ function pushISBN(){
 		}
 	});
 }
-function loadingSign(){
-	loadingSymbol = "<img src=\'{{ static_url(\'/img/loading.gif\') }}\'>";
 
-	document.getElementById("citation-landing").innerHTML = loadingSymbol;
+function loadingSign(){
+    if (document.getElementById("loadingSign").style.display != "block"){
+        document.getElementById("loadingSign").style.display = "block";
+    }
+    else{
+        document.getElementById("loadingSign").style.display = "none";
+    }
 }
 
 
