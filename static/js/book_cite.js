@@ -53,6 +53,7 @@ function pushISBN(){
 		},
 
 		error: function(jqXHR, textStatus, errorThrown){
+			loadingSign();
 			makeCitationVisible();
 			document.getElementById("citation-landing").innerHTML = "Something didn't work, try refreshing the page or changing your search!";
 			console.log("Error details: ", textStatus, ", ", errorThrown);		
