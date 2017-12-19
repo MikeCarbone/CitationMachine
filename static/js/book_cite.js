@@ -14,7 +14,7 @@ var foundIsbn = "";
 var bookCover = "";
 
 function pushISBN(){
-	console.log('function pushISBN called');
+	//console.log('function pushISBN called');
 	loadingSign();
 
 	$.ajax({
