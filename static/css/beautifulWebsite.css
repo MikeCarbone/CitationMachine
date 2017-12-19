@@ -330,6 +330,11 @@ select{
    	width: 10%;
 }
 
+select:hover{
+	background-color: #ED9A00;
+}
+
+
 /*iPhone6*/
 @media screen and (width: 375px) and (height: 667px){
 	.center-logo{
