@@ -17,7 +17,8 @@ function pushISBN(){
 	console.log('function pushISBN called');
 
 	$.ajax({
-		isbn: "/",
+		url: "/books",
+		//isbn: "/",
 		type: 'POST',
 		contenttype: 'application/json; charset=utf-8',
 		data : {"isbnSearch" : isbnToPass.value},
