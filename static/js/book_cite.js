@@ -15,6 +15,7 @@ var bookCover = "";
 
 function pushISBN(){
 	console.log('function pushISBN called');
+	loadingSign();
 
 	$.ajax({
 		url: "/books",
@@ -44,8 +45,6 @@ function pushISBN(){
 				authorFull = "";
 			}
 
-			document.getElementById("loadingSign").style.display = "none";
-
 			firstLast();
 			citationBookMLA();
 			assembleCover();
@@ -53,12 +52,15 @@ function pushISBN(){
 		},
 
 		error: function(jqXHR, textStatus, errorThrown){
-			document.getElementById("loadingSign").style.display = "none";
-			document.getElementById("citation-landing").innerHTML = "Something didn't work, try refreshing the page :-(";
+			document.getElementById("citation-landing").innerHTML = "Something didn't work, try refreshing the page or changing your search!";
 			console.log("Error details: ", textStatus, ", ", errorThrown);		
 		}
 	});
 }
+function loadingSign(){
+	document.getElementById("citation-landing").innerHTML = "<img src=\"{{ static_url('img/loading.gif') }}\" id=\"loadingSign\">";
+}
+
 
 function firstLast(){
 	var authorFirst = authorFull.split(' ').slice(0, -1).join(' ');
