@@ -282,7 +282,8 @@ button#auto-button.big-button{
 .citation-container{
 }
 
-#citation-landing{
+#citation-landing,
+.citation{
 	display: none;
 	background-color: white;
 	margin: 30px auto 0px auto;
