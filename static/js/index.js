@@ -58,9 +58,6 @@ function whichFormat(){
 	
 	if (formatList.value == "MLA"){
 		citationMLA();
-
-		document.getElementById("citation-landing2").innerHTML = "";
-		document.getElementById("citation-break").style.display = "none";
 	}
 	else if (formatList.value == "Chicago"){
 		assembleFullCMS();
@@ -619,8 +616,10 @@ function assembleFullCMS(){
 	document.getElementById("citation-landing").innerHTML = assembleFootnoteCMS();
 	document.getElementById("citation-landing2").innerHTML = assembleCitationCMS();
 	document.getElementById("citation-break").style.display = "inline-block";
+	fullChicagoCitation = assembleFootnoteCMS() + "\n" + assembleCitationCMS();
+	document.getElementById("citation-landing").innerHTML = fullChicagoCitation;
 
-	return; 
+	return fullChicagoCitation;; 
 }
 
 
