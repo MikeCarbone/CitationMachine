@@ -35,7 +35,7 @@ function firstLast(){
 
 
 function pushURL(){
-	console.log("in pushURL");
+	//console.log("in pushURL");
 	loadingSign();
 	$.ajax({
 		url: "/website",
