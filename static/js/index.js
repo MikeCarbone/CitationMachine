@@ -52,6 +52,28 @@ function pushURL(){
 	});
 }
 
+function whichFormat(){
+	var formatList = document.getElementById("format-list");
+	var formatChoice = formatList.options[formatList.selectedIndex].value;
+	
+	if (formatList.value == "MLA"){
+		citationMLA();
+
+		document.getElementById("citation-landing2").innerHTML = "";
+		document.getElementById("citation-break").style.display = "none";
+	}
+	else if (formatList.value == "Chicago"){
+		assembleFullCMS();
+	}
+	else if (formatList.value == "APA"){
+		assembleAPACitation();
+	}
+	else{
+		document.getElementById("citation-landing").innerHTML = "Please choose a valid format!";
+		return;
+	}
+}
+
 function fixMonthCreated(){
 	var theMonth2 = "";
 	//switch for month created
