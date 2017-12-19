@@ -36,6 +36,7 @@ function firstLast(){
 
 function pushURL(){
 	console.log("in pushURL");
+	loadingSign();
 	$.ajax({
 		url: "/website",
 		type: 'POST',
@@ -50,11 +51,28 @@ function pushURL(){
 			dayCreated.value = response.day;
 			monthCreated.value = response.month;
 			yearCreated.value = response.year;
+			loadingSign();
+			makeCitationVisible();
 			firstLast();
 			fixMonthCreated();
 			whichFormat();
+		},
+		error: function(jqXHR, textStatus, errorThrown){
+			loadingSign();
+			makeCitationVisible();
+			document.getElementById("citation-landing").innerHTML = "Something didn't work, try refreshing the page or changing your search!";
+			console.log("Error details: ", textStatus, ", ", errorThrown);		
 		}
 	});
+}
+
+function loadingSign(){
+    if (document.getElementById("loadingSign").style.display != "block"){
+        document.getElementById("loadingSign").style.display = "block";
+    }
+    else{
+        document.getElementById("loadingSign").style.display = "none";
+    }
 }
 
 function whichFormat(){
