@@ -72,10 +72,10 @@ function makeCitationVisible(){
 
 function loadingSign(){
     if (document.getElementById("loadingSign").style.display === "block"){
-        document.getElementById("loadingSign").style.display === "none";
+        document.getElementById("loadingSign").style.display = "none";
     }
     else{
-        document.getElementById("loadingSign").style.display === "block";
+        document.getElementById("loadingSign").style.display = "block";
     }
 }
 
