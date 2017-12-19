@@ -37,7 +37,7 @@ function sidebar_open() {
     document.getElementById("shortLogo").style.width = "100%";
     document.getElementById("shortLogo").style.margin = "0px auto";
     document.getElementById("shortLogo").style.display = "inline-block";
-    document.getElementById("mySidebar").style.marginLeft = "220px";
+    document.getElementById("mainDiv").style.marginLeft = "220px";
  
 }
 
