@@ -58,7 +58,7 @@ function pushISBN(){
 	});
 }
 function loadingSign(){
-	loadingSymbol = "<img src='{{ static_url('img/loading.gif') }}'' id='loadingSign'>";
+	loadingSymbol = "<img src='{{ static_url('img/loading.gif') }}'";
 
 	document.getElementById("citation-landing").innerHTML = loadingSymbol;
 }
