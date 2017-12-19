@@ -334,6 +334,12 @@ select:hover{
 	background-color: #ED9A00;
 }
 
+#loadingSign{
+	display: none;
+	margin: 25px auto 0 auto;
+	height: 50px;
+}
+
 
 /*iPhone6*/
 @media screen and (width: 375px) and (height: 667px){
