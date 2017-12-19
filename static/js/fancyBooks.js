@@ -70,6 +70,15 @@ function makeCitationVisible(){
     }
 }
 
+function loadingSign(){
+    if (document.getElementById("loadingSign").style.display === "block"){
+        document.getElementById("loadingSign").style.display === "none";
+    }
+    else{
+        document.getElementById("loadingSign").style.display === "block";
+    }
+}
+
 document.getElementById("isbn-home")
     .addEventListener("keyup", function(event) {
     event.preventDefault();

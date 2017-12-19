@@ -44,7 +44,8 @@ function pushISBN(){
 			else{
 				authorFull = "";
 			}
-
+			loadingSign();
+			makeCitationVisible();
 			firstLast();
 			citationBookMLA();
 			assembleCover();
@@ -52,6 +53,7 @@ function pushISBN(){
 		},
 
 		error: function(jqXHR, textStatus, errorThrown){
+			makeCitationVisible();
 			document.getElementById("citation-landing").innerHTML = "Something didn't work, try refreshing the page or changing your search!";
 			console.log("Error details: ", textStatus, ", ", errorThrown);		
 		}
