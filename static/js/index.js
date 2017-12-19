@@ -28,7 +28,7 @@ function firstLast(){
     return authorFirst.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 	}
 
-	firstName.value = authorFirst.charAt(0).toUpperCase() + authorFirst.slice(1).toLowerCase();
+	//firstName.value = authorFirst.charAt(0).toUpperCase() + authorFirst.slice(1).toLowerCase();
 	lastName.value = authorLast.charAt(0).toUpperCase() + authorLast.slice(1).toLowerCase();
 }
 
