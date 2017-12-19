@@ -523,7 +523,8 @@ function urlInsertCitation(){
 }
 
 function assembleFootnoteCMS(){
-	footnoteCMS = "FOOTNOTE: " + assembleAuthorFootnoteCMS() + assembleTitleFootnoteCMS() + assemblePublisherFootnoteCMS() + assembleDateFootnoteCMS() + urlInsertFootnote();
+	var footnoteText = "FOOTNOTE: ";
+	footnoteCMS = footnoteText.bold() + assembleAuthorFootnoteCMS() + assembleTitleFootnoteCMS() + assemblePublisherFootnoteCMS() + assembleDateFootnoteCMS() + urlInsertFootnote();
 	//document.getElementById("citation-landing").innerHTML = "FOOTNOTE: " + footnoteCMS;
 	return footnoteCMS;
 }
@@ -607,7 +608,8 @@ function assembleDateCitationCMS(){
 }
 
 function assembleCitationCMS(){
-	citationCMS = "\n" + "CITATION: " + assembleAuthorCitationCMS() + assembleTitleCitationCMS() + assemblePublisherCitationCMS() + assembleDateCitationCMS() + urlInsertCitation();
+	var citationText = "CITATION: ";
+	citationCMS = "\n" + citationText.bold() + assembleAuthorCitationCMS() + assembleTitleCitationCMS() + assemblePublisherCitationCMS() + assembleDateCitationCMS() + urlInsertCitation();
 	//document.getElementById("citation-landing").innerHTML = "CITATION: " + citationCMS;
 	return citationCMS;
 }
