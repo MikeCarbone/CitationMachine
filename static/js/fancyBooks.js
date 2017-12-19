@@ -67,7 +67,6 @@ function makeCitationVisible(){
         document.getElementById("citation-landing").style.display = "inline-block";
         document.getElementById("bookCoverContainer").style.display = "inline-block";
         document.getElementById("bookCover").style.display = "inline-block";
-        document.getElementById("loadingSign").style.display = "inline-block";
     }
 }
 
