@@ -65,13 +65,13 @@
 		<div class="linkZone">
 				<input type="text" id="url-home" placeholder="Enter your link here" class="underline input-center" maxlength="1500">
 		    	<button class="big-button" title="Click to automatically create your citation" id="auto-button" type=submit onclick="pushURL()">auto-cite!</button>
-		    	<img src="{{ static_url('img/loading.gif') }}" id="loadingSign">
 		</div>
 		<select class="classic" id="format-list">
 	    	<option value="MLA" selected>MLA</option>
 	    	<option value="Chicago">Chicago</option>
 	    	<option value="APA">APA</option>
 		</select>
+		<img src="{{ static_url('img/loading.gif') }}" id="loadingSign">
 
 		<div class="citation-container" id="citation-container">
 			<p class="citation" id="citation-landing"></p>
