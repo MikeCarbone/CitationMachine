@@ -324,6 +324,7 @@ select{
    	font-family: Verdana, sans-serif;
    	font-size: 18px;
    	margin: 20px auto 0 auto;
+   	min-width: 120px;
    	padding: 0 0 0 3%;
    	text-align: center;
    	width: 10%;

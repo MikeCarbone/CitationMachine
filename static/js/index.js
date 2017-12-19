@@ -607,7 +607,7 @@ function assembleDateCitationCMS(){
 }
 
 function assembleCitationCMS(){
-	citationCMS = "CITATION: " + assembleAuthorCitationCMS() + assembleTitleCitationCMS() + assemblePublisherCitationCMS() + assembleDateCitationCMS() + urlInsertCitation();
+	citationCMS = "\n" + "CITATION: " + assembleAuthorCitationCMS() + assembleTitleCitationCMS() + assemblePublisherCitationCMS() + assembleDateCitationCMS() + urlInsertCitation();
 	//document.getElementById("citation-landing").innerHTML = "CITATION: " + citationCMS;
 	return citationCMS;
 }
