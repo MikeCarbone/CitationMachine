@@ -615,7 +615,7 @@ function assembleCitationCMS(){
 function assembleFullCMS(){
 	//document.getElementById("citation-landing").innerHTML = assembleFootnoteCMS();
 	//document.getElementById("citation-landing2").innerHTML = assembleCitationCMS();
-	document.getElementById("citation-break").style.display = "inline-block";
+	//document.getElementById("citation-break").style.display = "inline-block";
 	fullChicagoCitation = assembleFootnoteCMS() + "\n" + assembleCitationCMS();
 	document.getElementById("citation-landing").innerHTML = fullChicagoCitation;
 
