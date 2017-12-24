@@ -66,6 +66,7 @@ a.sidebarItem.hover{
 	overflow: hidden;
 	color: #268BCB;
 	font-size: 48px;
+	cursor: pointer;
 }
 
 #sidebarButton:hover,
@@ -265,6 +266,7 @@ button#auto-button.big-button{
 	display: block;
 	text-align: center;
 	margin: 0px auto;
+	cursor: pointer;
 }
 
 .label{
@@ -342,7 +344,7 @@ button#auto-button.big-button{
 
 #loadingSign{
 	display: none;
-	margin: 0px auto;
+	margin: 25px auto 0 auto;
 	height: 50px;
 }
 
