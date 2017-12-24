@@ -75,6 +75,10 @@ a.sidebarItem.hover{
 	color: #FFA500;
 }
 
+#sidebarButton:active{
+	border: none;
+}
+
 h1.shortLogo{
 	display: inline-block;
 	width: 220px;
@@ -330,6 +334,7 @@ select{
    	padding: 0 0 0 3%;
    	text-align: center;
    	width: 10%;
+   	cursor: pointer;
 }
 
 select:hover{

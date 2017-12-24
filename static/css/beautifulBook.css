@@ -74,6 +74,10 @@ a.sidebarItem.hover{
 	color: #FFA500;
 }
 
+#sidebarButton:active{
+	border: none;
+}
+
 h1.shortLogo{
 	display: inline-block;
 	width: 220px;
