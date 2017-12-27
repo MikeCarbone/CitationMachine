@@ -31,37 +31,17 @@ function sidebar_open() {
     document.getElementById("shortLogo").style.transition = "all 0.5s ease-in-out";
     document.getElementById("mainDiv").style.transition = "all 0.5s ease-in-out";
 
-    document.getElementById("mySidebar").style.transition = "none"
     document.getElementById("mySidebar").style.backgroundColor = "white";
-
-  //  document.getElementById("mySidebar").style.transition = "width 1.0s linear 0s"
     document.getElementById("mySidebar").style.width = "220px";
-
     document.getElementById("mySidebar").style.zIndex = "3";
-
-  //  document.getElementById("sidebarButton").style.transition = "color 1.0s linear 0s"
     document.getElementById("sidebarButton").style.color = "#268BCB";
-
-   // document.getElementById("sidebarButton").style.transition = "width 1.0s linear 0s"
     document.getElementById("sidebarButton").style.width = "100%";
-
     document.getElementById("sidebarButton").style.display = "inline-block";
-
-  //  document.getElementById("sidebarButton").style.transition = "margin 1.0s linear 0s"
     document.getElementById("sidebarButton").style.margin = "0px auto";
-
-   // document.getElementById("shortLogo").style.transition = "color 1.0s linear 0s"
     document.getElementById("shortLogo").style.color = "#268BCB";
-
-  //  document.getElementById("shortLogo").style.transition = "width 1.0s linear 0s"
     document.getElementById("shortLogo").style.width = "100%";
-   
-  //  document.getElementById("shortLogo").style.transition = "margin 1.0s linear 0s"
     document.getElementById("shortLogo").style.margin = "0px auto";
-
     document.getElementById("shortLogo").style.display = "inline-block";
-
-//   document.getElementById("mainDiv").style.transition = "marginLeft 1.0s linear 0s"
     document.getElementById("mainDiv").style.marginLeft = "220px";
 }
 
@@ -72,6 +52,11 @@ function sidebar_close() {
     for(var i = 0; i < items.length; i++){
         items[i].style.display = "none";
     }
+    document.getElementById("mySidebar").style.transition = "all 0.5s ease-in-out";
+    document.getElementById("sidebarButton").style.transition = "all 0.5s ease-in-out";
+    document.getElementById("shortLogo").style.transition = "all 0.5s ease-in-out";
+    document.getElementById("mainDiv").style.transition = "all 0.5s ease-in-out";
+
     document.getElementById("mainDiv").style.margin = "0px auto";
     document.getElementById("mainDiv").style.padding = "0px";
     //document.getElementById("mainDiv").style.zIndex = "-10"
