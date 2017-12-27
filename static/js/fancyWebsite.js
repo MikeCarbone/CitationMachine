@@ -26,19 +26,38 @@ function sidebar_open() {
     for(var i = 0; i < items.length; i++){
         items[i].style.display = "inline-block";
     }
+    document.getElementById("mySidebar").style.transition = "backgroundColor 1.0s linear 0s"
     document.getElementById("mySidebar").style.backgroundColor = "white";
+
+    document.getElementById("mySidebar").style.transition = "width 1.0s linear 0s"
     document.getElementById("mySidebar").style.width = "220px";
+
     document.getElementById("mySidebar").style.zIndex = "3";
+
+    document.getElementById("sidebarButton").style.transition = "color 1.0s linear 0s"
     document.getElementById("sidebarButton").style.color = "#268BCB";
+
+    document.getElementById("sidebarButton").style.transition = "width 1.0s linear 0s"
     document.getElementById("sidebarButton").style.width = "100%";
+
     document.getElementById("sidebarButton").style.display = "inline-block";
+
+    document.getElementById("mySidebar").style.transition = "margin 1.0s linear 0s"
     document.getElementById("sidebarButton").style.margin = "0px auto";
+
+    document.getElementById("shortLogo").style.transition = "color 1.0s linear 0s"
     document.getElementById("shortLogo").style.color = "#268BCB";
+
+    document.getElementById("shortLogo").style.transition = "width 1.0s linear 0s"
     document.getElementById("shortLogo").style.width = "100%";
+   
+    document.getElementById("shortLogo").style.transition = "margin 1.0s linear 0s"
     document.getElementById("shortLogo").style.margin = "0px auto";
+
     document.getElementById("shortLogo").style.display = "inline-block";
+
+    document.getElementById("mainDiv").style.transition = "marginLeft 1.0s linear 0s"
     document.getElementById("mainDiv").style.marginLeft = "220px";
- 
 }
 
 
