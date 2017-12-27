@@ -26,10 +26,10 @@ function sidebar_open() {
     for(var i = 0; i < items.length; i++){
         items[i].style.display = "inline-block";
     }
-    document.getElementById("mySidebar").style.transition = "all 1s";
-    document.getElementById("sidebarButton").style.transition = "all 1s";
-    document.getElementById("shortLogo").style.transition = "all 1s";
-    document.getElementById("mainDiv").style.transition = "all 1s";
+    document.getElementById("mySidebar").style.transition = "all 0.75s";
+    document.getElementById("sidebarButton").style.transition = "all 0.75s";
+    document.getElementById("shortLogo").style.transition = "all 0.75s";
+    document.getElementById("mainDiv").style.transition = "all 0.75s";
 
    // document.getElementById("mySidebar").style.transition = "backgroundColor 1.0s linear 0s"
     document.getElementById("mySidebar").style.backgroundColor = "white";
