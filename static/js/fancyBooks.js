@@ -26,6 +26,11 @@ function sidebar_open() {
     for(var i = 0; i < items.length; i++){
         items[i].style.display = "inline-block";
     }
+    document.getElementById("mySidebar").style.transition = "all 0.5s ease-in-out";
+    document.getElementById("sidebarButton").style.transition = "all 0.5s ease-in-out";
+    document.getElementById("shortLogo").style.transition = "all 0.5s ease-in-out";
+    document.getElementById("mainDiv").style.transition = "all 0.5s ease-in-out";
+
     document.getElementById("mySidebar").style.backgroundColor = "white";
     document.getElementById("mySidebar").style.width = "220px";
     document.getElementById("mySidebar").style.zIndex = "3";
@@ -47,6 +52,11 @@ function sidebar_close() {
     for(var i = 0; i < items.length; i++){
         items[i].style.display = "none";
     }
+    document.getElementById("mySidebar").style.transition = "all 0.5s ease-in-out";
+    document.getElementById("sidebarButton").style.transition = "all 0.5s ease-in-out";
+    document.getElementById("shortLogo").style.transition = "all 0.5s ease-in-out";
+    document.getElementById("mainDiv").style.transition = "all 0.5s ease-in-out";
+
     document.getElementById("mainDiv").style.margin = "0px auto";
     document.getElementById("mainDiv").style.padding = "0px";
     //document.getElementById("mainDiv").style.zIndex = "-10"
