@@ -31,7 +31,7 @@ function sidebar_open() {
     document.getElementById("shortLogo").style.transition = "all 0.5s ease-in-out";
     document.getElementById("mainDiv").style.transition = "all 0.5s ease-in-out";
 
-   // document.getElementById("mySidebar").style.transition = "backgroundColor 1.0s linear 0s"
+    document.getElementById("mySidebar").style.transition = "none"
     document.getElementById("mySidebar").style.backgroundColor = "white";
 
   //  document.getElementById("mySidebar").style.transition = "width 1.0s linear 0s"
