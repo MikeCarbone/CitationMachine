@@ -385,7 +385,9 @@ select:hover{
 	}
 
 	.input-container{
-		margin-left: 18%;
+		display: block;
+		margin: 50px auto;
+		width: 90%;
 	}
 
 	.center-logo{
