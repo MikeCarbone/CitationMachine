@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108299328-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-108299328-1');
-	</script>
 
 	<meta name="author" content="Mike Carbone">
 	<meta name="description" content="A user-friendly web service to help you create citations for your papers. Built by a student, for students.">
@@ -34,37 +25,38 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!--<link rel="stylesheet" type="text/css" href="../css/beautifulHome.css"/>-->
-	<link rel="stylesheet" type="text/css" href="{{ static_url('css/beautifulHome.css') }}"/>
+	<link rel="stylesheet" type="text/css" href="beautifulHome.css"/>
 	<link rel="icon" href="{{ static_url('img/goBibitIcon2_v02.png') }}">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 
 	<title>goBibit | Welcome</title>
 
 </head>
 <body>
-		<!--<img id="background-image" src="../img/home_background_v01.png">-->
-		<div class="center-logo">
-			<h1>go(Bibit)</h1>
-		</div>
-		<div id="get-started">
-			<h3 class="med-text">let's get this party started:</h3>
-		</div>
-
-		<section class="gradient">
-				<a href="/books"><button id="book" class="big-button">cite a book</button></a>
-				<a href="/website"><button id="website" class="big-button">cite a website</button></a>
-		</section>
-
-		<div class="divider"></div>
-
-		<div class="right-container">
-				<div id ="better-citations" class="faster">get better citations, faster</div>
-			<div class="bullet-zone">
-				<ul>
-					<li>made by a student, for students</li>
-					<li>fast, reliable, user-friendly</li>
-					<li>ad-free</li>
-				</ul>
+	<div class="container flex">
+		<div class="left flex">
+			<h1 class="title">go(Bibit)</h1>
+			<h3 class="subtitle">let's get this party started:</h3>
+			<div class="buttons-container flex">
+				<div class="button">
+					<a class="button__link" href="/books">cite a book</a>
+				</div>
+				<div class="button">
+					<a class="button__link" href="/website">cite a website</a>
+				</div>
 			</div>
 		</div>
+		<div class="divider"></div>
+		<div class="right flex">
+			<h3 class="list-title">get better citations, faster</h3>
+			<ul>
+				<li class="list-item">made by a student, for students</li>
+				<li class="list-item">fast and simple</li>
+				<li class="list-item"><strong>ad-free</strong></li>
+			</ul>	
+		</div>
+	</div>
+	
+	
 </body>
 </html>
