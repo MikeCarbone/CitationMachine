@@ -75,10 +75,10 @@ def app():
 	print('Server Running...')
 	print('Press ctrl + c to close')
 	application = tornado.web.Application(handlers, **settings)
-	# http_server = tornado.httpserver.HTTPServer(application)
-	# port = int(os.environ.get("PORT", 5000))
-	# http_server.listen(port)
-	application.listen(8888)
+	http_server = tornado.httpserver.HTTPServer(application)
+	port = int(os.environ.get("PORT", 5000))
+	http_server.listen(port)
+	# application.listen(8888)
 	tornado.ioloop.IOLoop.instance().start()
 
 #Start the server at port n
