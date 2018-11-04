@@ -62,11 +62,11 @@ function pushISBN(){
 }
 
 function loadingSign(){
-    if (document.getElementById("loadingSign").style.display != "block"){
-        document.getElementById("loadingSign").style.display = "block";
+    if (document.getElementById("loading-sign").style.display != "block"){
+        document.getElementById("loading-sign").style.display = "block";
     }
     else{
-        document.getElementById("loadingSign").style.display = "none";
+        document.getElementById("loading-sign").style.display = "none";
     }
 }
 

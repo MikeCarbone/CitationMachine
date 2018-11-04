@@ -37,6 +37,7 @@ function firstLast(){
 function pushURL(){
 	//console.log("in pushURL");
 	loadingSign();
+	clearFields();
 	$.ajax({
 		url: "/website",
 		type: 'POST',
@@ -54,6 +55,7 @@ function pushURL(){
 			loadingSign();
 			makeCitationVisible();
 			firstLast();
+			fillDateAccessed();
 			fixMonthCreated();
 			whichFormat();
 		},
@@ -67,25 +69,35 @@ function pushURL(){
 }
 
 function loadingSign(){
-    if (document.getElementById("loadingSign").style.display != "block"){
-        document.getElementById("loadingSign").style.display = "block";
+    if (document.getElementById("loading-sign").style.display != "block"){
+        document.getElementById("loading-sign").style.display = "block";
     }
     else{
-        document.getElementById("loadingSign").style.display = "none";
+        document.getElementById("loading-sign").style.display = "none";
     }
 }
 
+formatOptions = document.getElementsByClassName("format-option");
+let selectedFormat = "MLA";
+
+for (var i = 0; i < formatOptions.length; i++) {
+    formatOptions[i].addEventListener("click", function(){       
+        selectedFormat = this.children[0].innerHTML;
+     
+        if (isCitationVisible){
+            whichFormat();
+        }
+    });
+}
+
 function whichFormat(){
-	var formatList = document.getElementById("format-list");
-	var formatChoice = formatList.options[formatList.selectedIndex].value;
-	
-	if (formatList.value == "MLA"){
+	if (selectedFormat == "MLA"){
 		citationMLA();
 	}
-	else if (formatList.value == "Chicago"){
+	else if (selectedFormat == "Chicago"){
 		assembleFullCMS();
 	}
-	else if (formatList.value == "APA"){
+	else if (selectedFormat == "APA"){
 		assembleAPACitation();
 	}
 	else{
@@ -194,6 +206,20 @@ switch(monthNum){
 	case 11:
 		theMonth = "Dec";
 }
+
+//inserts todays date into the Date Accessed field
+function fillDateAccessed(){
+	if (document.getElementById("month-accessed").value == '') {
+		document.getElementById("month-accessed").value = theMonth;
+	}
+	if (document.getElementById("day-accessed").value == '') {
+		document.getElementById("day-accessed").value = theDay;
+	}
+	if (document.getElementById("year-accessed").value == '') {
+		document.getElementById("year-accessed").value = theYear;
+	}
+}
+fillDateAccessed();
 
 //this will format the month the article was made into proper MLA abbreviation
 
@@ -371,11 +397,6 @@ function citationMLA() {
 	document.getElementById("citation-landing").innerHTML = authorAssembled + articleAssembled + websiteTitleAssembled + publisherAssembled + dateCreatedAssembled +  mediumInput + dateAccessedAssembled;
 		
 }
-
-//inserts todays date into the Date Accessed field
-document.getElementById("month-accessed").value = theMonth;
-document.getElementById("day-accessed").value = theDay;
-document.getElementById("year-accessed").value = theYear;
 
 //------------------------------Chicago------------------------------------//
 function correctMonthFootnoteCMS(){
@@ -656,12 +677,10 @@ function assembleAuthorAPA(){
 		authorAssembledAPA = lastName.value.charAt(0).toUpperCase() + lastName.value.slice(1).toLowerCase() + ", " + firstName.value.charAt(0).toUpperCase() + firstName.value.slice(1) + ". ";
 	}
 	else if (firstName.value != "" && lastName.value === ""){
-		authorAssembledAPA = firstName.value.charAt(0).toUpperCase() + firstName.value.slice(1) + ". "
-		//console.log('hello')
-		
+		authorAssembledAPA = firstName.value.charAt(0).toUpperCase() + firstName.value.slice(1) + ". ";
 	}
 	else if (firstName.value === "" && lastName.value != ""){
-		authorAssembledAPA = lastName.value.charAt(0).toUpperCase() + lastName.value.slice(1).toLowerCase() + ". "
+		authorAssembledAPA = lastName.value.charAt(0).toUpperCase() + lastName.value.slice(1).toLowerCase() + ". ";
 	}
 	else {
 		authorAssembledAPA = "";
@@ -694,20 +713,20 @@ function assemblePublisherAPA(){
 
 function assembleDateAPA(){
 	if (yearCreated.value != ""){
-			dateAssembledAPA = "(" + yearCreated.value + "). "
+			dateAssembledAPA = "(" + yearCreated.value + "). ";
 	}
 	else{
-		dateAssembledAPA = "n.d."
+		dateAssembledAPA = "n.d.";
 	}
 	return dateAssembledAPA;
 }
 
 function urlInsertAPACitation(){
 	if (urlToPass.value != ""){
-		urlAssembled = "Retrieved from " + urlToPass.value + "."
+		urlAssembled = "Retrieved from " + urlToPass.value + ".";
 	}
 	else{
-		urlAssembled = "."
+		urlAssembled = ".";
 	}
 	return urlAssembled;
 }
@@ -716,4 +735,18 @@ function assembleAPACitation(){
 	APACitation = assembleAuthorAPA() + assembleDateAPA() + assembleTitleAPA() + assemblePublisherAPA() + urlInsertAPACitation();
 	document.getElementById("citation-landing").innerHTML = APACitation;
 	return APACitation;
+}
+
+function clearFields(){
+	firstName.value = '';
+	lastName.value = '';
+	articleTitle.value = '';
+	websiteTitle.value = '';
+	publisher.value = '';
+	dayCreated.value = '';
+	monthCreated.value = '';
+	yearCreated.value = '';
+	dayAccessed.value = '';
+	monthAccessed.value = '';
+	yearAccessed.value = '';
 }

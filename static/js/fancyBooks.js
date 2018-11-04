@@ -1,91 +1,12 @@
 var citationLanding = document.getElementById('citation-landing');
-var isCitationVisible = false;
-var open = true;
-
-function checkScreenSize(){
-    if (window.innerWidth < 750){
-        sidebar_close();
-    }
-}
-
-checkScreenSize();
-window.addEventListener('resize', checkScreenSize);
-
-function sidebarring(){
-    if (open == false){
-        sidebar_open();
-        }
-    else{
-        sidebar_close();
-        }
-}
-
-function sidebar_open() {
-    open = true;
-     var items = document.getElementsByClassName("sidebarItem");
-    for(var i = 0; i < items.length; i++){
-        items[i].style.display = "inline-block";
-    }
-    document.getElementById("mySidebar").style.transition = "all 0.5s ease-in-out";
-    document.getElementById("sidebarButton").style.transition = "all 0.5s ease-in-out";
-    document.getElementById("shortLogo").style.transition = "all 0.5s ease-in-out";
-    document.getElementById("mainDiv").style.transition = "all 0.5s ease-in-out";
-
-    document.getElementById("mySidebar").style.backgroundColor = "white";
-    document.getElementById("mySidebar").style.width = "220px";
-    document.getElementById("mySidebar").style.zIndex = "3";
-    document.getElementById("sidebarButton").style.color = "#268BCB";
-    document.getElementById("sidebarButton").style.width = "100%";
-    document.getElementById("sidebarButton").style.display = "inline-block";
-    document.getElementById("sidebarButton").style.margin = "0px auto";
-    document.getElementById("shortLogo").style.color = "#268BCB";
-    document.getElementById("shortLogo").style.width = "100%";
-    document.getElementById("shortLogo").style.margin = "0px auto";
-    document.getElementById("shortLogo").style.display = "inline-block";
-    document.getElementById("mainDiv").style.marginLeft = "220px";
-}
-
-
-function sidebar_close() {
-    open = false;
-    var items = document.getElementsByClassName("sidebarItem");
-    for(var i = 0; i < items.length; i++){
-        items[i].style.display = "none";
-    }
-    document.getElementById("mySidebar").style.transition = "all 0.5s ease-in-out";
-    document.getElementById("sidebarButton").style.transition = "all 0.5s ease-in-out";
-    document.getElementById("shortLogo").style.transition = "all 0.5s ease-in-out";
-    document.getElementById("mainDiv").style.transition = "all 0.5s ease-in-out";
-
-    document.getElementById("mainDiv").style.margin = "0px auto";
-    document.getElementById("mainDiv").style.padding = "0px";
-    //document.getElementById("mainDiv").style.zIndex = "-10"
-    document.getElementById("mySidebar").style.backgroundColor = "transparent";
-    document.getElementById("sidebarButton").style.color = "white";
-    document.getElementById("sidebarButton").style.position = "absolute";
-    document.getElementById("sidebarButton").style.zIndex = "3";
-    document.getElementById("sidebarButton").style.width = "100%";
-    document.getElementById("shortLogo").style.display = "none";
-    document.getElementById("mySidebar").style.width = "10%"
-}
-
+let formatOptions = document.getElementsByClassName("format-option");
+let isCitationVisible = false;
 
 function makeCitationVisible(){
    if (isCitationVisible == false){
         isCitationVisible = true;
-        document.getElementById("citation-container").style.display = "inline-block";
-        document.getElementById("citation-landing").style.display = "inline-block";
-        document.getElementById("bookCoverContainer").style.display = "inline-block";
-        document.getElementById("bookCover").style.display = "inline-block";
-    }
-}
-
-function loadingSign(){
-    if (document.getElementById("loadingSign").style.display != "block"){
-        document.getElementById("loadingSign").style.display = "block";
-    }
-    else{
-        document.getElementById("loadingSign").style.display = "none";
+        document.getElementById("citation-container").style.display = "block";
+        document.getElementById("citation-landing").style.display = "block";
     }
 }
 
@@ -96,3 +17,64 @@ document.getElementById("isbn-home")
         document.getElementById("auto-button").click();
     }
 });
+
+let text = document.getElementById("citation-copy-text");
+let btn = document.getElementById("citation-copy-button");
+btn.addEventListener("click", copyText);
+function copyText() {
+    var citationText = document.getElementById("citation-landing");
+    var textToCopy = document.createElement("div");
+        textToCopy.style.position = 'absolute';
+        textToCopy.style.opacity = '0';
+        textToCopy.style.fontSize = '12px';
+        textToCopy.style.fontFamily = 'Times New Roman';
+        textToCopy.style.paddingLeft = '50px';
+        textToCopy.style.textIndent = '-50px';
+        textToCopy.id = 'citation-copy-text';
+        textToCopy.innerHTML = citationText.innerHTML;
+        document.body.appendChild(textToCopy);
+
+    var range = document.getSelection().getRangeAt(0);
+    range.selectNode(document.getElementById("citation-copy-text"));
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+
+    textToCopy.remove();
+}
+
+function badgeWorker(){
+    let allBadgeHolders = document.getElementsByClassName('badge-holder');
+
+    if(JSON.parse(localStorage.getItem('allCitations'))){
+        for (let badge of allBadgeHolders){
+            badge.classList.add('badged');
+        }
+    } else {
+        for (let badge of allBadgeHolders){
+            if (badge.className == '/\bbadged\b/') {
+                badge.classList.remove('badged');
+            }
+        }
+    }
+}
+badgeWorker();
+
+const addButton = document.getElementById("citation-add-button");
+addButton.addEventListener("click", addCitation);
+function addCitation(){
+    console.log("clicked");
+    let currentCitation = document.getElementById("citation-landing").innerHTML;
+    let oldCitations = JSON.parse(localStorage.getItem('allCitations')) || [];
+    let newCitation = {
+        'citation': currentCitation,
+        'format': 'MLA'
+    };
+    
+    console.log(oldCitations);
+
+    oldCitations.push(newCitation);
+    localStorage.setItem('allCitations', JSON.stringify(oldCitations));
+
+    badgeWorker();
+
+}

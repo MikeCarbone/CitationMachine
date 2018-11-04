@@ -55,7 +55,7 @@
 				<ul class="nav__nav">
 					<li><a class="nav-link" href="/books">cite a book</a></li>
 					<li><a class="nav-link" href="/website">cite a website</a></li>
-					<li><a class="nav-link badge-holder" href="/bibliography">your bibliography</a></li>
+					<li><a class="nav-link" href="/bibliography">your bibliography</a></li>
 					<li><a class="nav-link" href="/donate">donate</a></li>
 					<li><a class="nav-link" href="/feeback">feedback</a></li>
 				</ul>
@@ -65,7 +65,6 @@
 			<ul class="mobile-nav__list nav__nav">
 				<li><a class="nav-link mobile-nav__list-item" href="/books">cite a book</a></li>
 				<li><a class="nav-link mobile-nav__list-item" href="/website">cite a website</a></li>
-				<li><a class="nav-link mobile-nav__list-item badge-holder" href="/bibliography">your bibliography</a></li>
 				<li><a class="nav-link mobile-nav__list-item" href="/donate">donate</a></li>
 				<li><a class="nav-link mobile-nav__list-item" href="/feeback">feedback</a></li>
 			</ul>
@@ -95,93 +94,28 @@
 		</div> -->
 	</header>
 	
-	<div id="mainDiv" class="main">
-		<!-- <h1 class="center-logo"><a href="/">go(Bibit)</a></h1>
-		<h2 class="label"><a href="/website">cite a website</a></h2> -->
-
-		<div class="linkZone flex">
-			<!-- <div class="instruction-container">
-				<h3 class="instruction">Step 1: paste your link here and click auto-cite</h3>
+	<div>
+		<div disabled class="citation" id="citation-landing"></div>
+		<div id="bib-buttons">
+			<button class="big-button bib-button" id="clear-all-button" title="Click to remove all citations from your bibliography.">clear all citations</button>
+		</div>
+		
+		<section class="bib-main">
+			<!-- <div class="tools">
+				<h1>Bibliography</h1>
+				<p>Generate citations to add them to the bibliography. When you're all done, just copy and paste the page to your paper!</p>
+				<button class="big-button bib-button" id="clear-all-button" title="Click to remove all citations from your bibliography.">clear all citations</button>
+				<h1>Bibliography</h1>
+				<p>Generate citations to add them to the bibliography. When you're all done, just copy and paste the page to your paper!</p>
+				<button class="big-button bib-button" id="clear-all-button" title="Click to remove all citations from your bibliography.">clear all citations</button>
+				<h1>Bibliography</h1>
+				<p>Generate citations to add them to the bibliography. When you're all done, just copy and paste the page to your paper!</p>
+				<button class="big-button bib-button" id="clear-all-button" title="Click to remove all citations from your bibliography.">clear all citations</button>
 			</div> -->
-			
-			
-				<input type="text" id="url-home" placeholder="Enter your link here" class="underline input-center" maxlength="1500">
-		    	<button class="big-button" title="Click to automatically create your citation" id="auto-button" type=submit onclick="pushURL()">auto-cite!</button>
-		</div>
-		<!-- <select class="classic" id="format-list">
-	    	<option value="MLA" selected>MLA</option>
-	    	<option value="Chicago">Chicago</option>
-	    	<option value="APA">APA</option>
-		</select> -->
-		<div class="format-selection flex">
-			<div class="format-option active-option">
-				<h3>MLA</h3></div>
-			<div class="format-option">
-				<h3>Chicago</h3>
-			</div>
-			<div class="format-option">
-				<h3>APA</h3>
-			</div>
-		</div>
-		<div class="loading-container">
-			<img src="{{ static_url('img/loading.gif') }}" id="loading-sign">
-		</div>
-
-		<div class="citation-container" id="citation-container">
-			<div disabled class="citation" id="citation-landing"></div>
-			<div class="citation-container__buttons">
-				<button class="big-button" id="citation-copy-button" title="Click to copy to clipboard">copy</button>
-				<button class="big-button" id="citation-add-button" title="Click to add citation to your bibliography!">add to bibliography</button>
-			</div>
-			
-
-		</div>
-
-		
-		<section>
-			<div class="input-container">
-				<div class="refresh-button" onclick="makeCitationVisible(), whichFormat()">
-					<span class="refresh-button__entity">&#8635;</span>
+			<div class="paper">
+				<h1 id="bib-title">Works Cited</h1>
+				<div class="paper__citation-list">
 				</div>
-				<div class="flex row row1">
-					<input type="text" id="article-title" placeholder="article title" class="underline" title="Title of the content" maxlength="250">
-				</div>
-				
-				<div class="flex row row2">
-					<input type="text" id="first-name" placeholder="author first" class="underline" title="Author's first name" maxlength="100">
-		
-					<input type="text" id="last-name" placeholder="author last" class="underline" title="Author's last name" maxlength="100">
-				</div>
-				
-				<div class="flex row row3">
-					<input type="text" id="website-title" placeholder="website title" class="underline" title="Website Title" maxlength="100">
-		
-					<input type="text" id="publisher" placeholder="publisher" class="underline" title="Publisher of the content" maxlength="100">
-				</div>
-
-				<div class="flex row row4">
-					<input type="text" id="month-created" placeholder="month created" class="underline" title="The month the content was created" maxlength="20">
-	
-					<input type="number" id="day-created" placeholder="day created" class="underline" title="The year the content was created" maxlength="20">
-			
-					<input type="text" id="year-created" placeholder="year created" class="underline" title="The year the content was created" maxlength="20">
-				</div>
-
-				<div class="flex row row5">
-					<input type="text" id="month-accessed" placeholder="month accessed" class="underline" title="The month you accessed the content" maxlength="20">
-		
-					<input type="number" id="day-accessed" placeholder="day accessed" class="underline" title="The day you accessed the content" maxlength="20">
-				
-					<input type="text" id="year-accessed" placeholder="year accessed" class="underline" title="The year you accessed the content" maxlength="20">
-				</div>
-		
-				
-			
-				
-					
-			<button class="big-button" id="button-update" onclick="makeCitationVisible(), whichFormat()" type=button title="This will re-generate the citation with the updated information">update citation</button>
-
-
 			</div>
 		</section>
 		<footer class="footer">
@@ -191,19 +125,10 @@
 		
 	</div>
 
-<!--<script type="text/javascript" src="../js/fancy.js"></script>
 <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-<script type="text/javascript" src="../js/index.js"></script>-->
 
-<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-<!-- <script src="fancyWebsite.js"></script>
-<script src="index.js"></script> -->
-
-<script src="{{ static_url('js/fancyWebsite.js') }}"></script>
-<script src="{{ static_url('js/index.js') }}"></script>
-<script src="{{ static_url('js/nav.js') }}"></script>
-
-
+<script type="text/javascript" src="{{ static_url('js/nav.js') }}"></script>
+<script type="text/javascript" src="{{ static_url('js/bib.js') }}"></script>
 
 
 

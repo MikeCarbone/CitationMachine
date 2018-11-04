@@ -796,6 +796,9 @@ def default_(page_soup, passTld):
 	elif page_soup.h1.text != None:
 		title = page_soup.h1.text.strip()
 
+	# elif page_soup.title.text != None:
+	# 	title = page_soup.title.text.strip()
+
 	else:
 		title = ''
 
